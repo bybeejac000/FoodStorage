@@ -24,7 +24,7 @@ namespace FoodStorage
                     foodName = Console.ReadLine();
                     if (string.IsNullOrWhiteSpace(foodName))
                     {
-                        Console.WriteLine("\n Please enter valid food!!!\n");
+                        Console.WriteLine("\nPlease enter valid food!!!\n");
                     }
                 }
                 while (string.IsNullOrWhiteSpace(foodName));
@@ -37,7 +37,7 @@ namespace FoodStorage
                     foodCat = Console.ReadLine();
                     if (string.IsNullOrWhiteSpace(foodCat))
                     {
-                        Console.WriteLine("\n Please enter valid food category!!!\n");
+                        Console.WriteLine("\nPlease enter valid food category!!!\n");
                     }
                 }
                 while (string.IsNullOrWhiteSpace(foodCat));
@@ -51,7 +51,7 @@ namespace FoodStorage
                     strFoodQty = Console.ReadLine();
                     if (string.IsNullOrWhiteSpace(strFoodQty))
                     {
-                        Console.WriteLine("\n Please enter valid food quantity!!!\n");
+                        Console.WriteLine("\nPlease enter valid food quantity!!!\n");
                     }
                     else
                     {
@@ -67,7 +67,7 @@ namespace FoodStorage
                             }
                             catch
                             {
-                                Console.WriteLine("\n Please enter valid food quantity!!!\n");
+                                Console.WriteLine("\nPlease enter valid food quantity!!!\n");
                                 strFoodQty = Console.ReadLine();
                             }
 
@@ -84,7 +84,7 @@ namespace FoodStorage
                     foodExp = Console.ReadLine();
                     if (string.IsNullOrWhiteSpace(foodExp))
                     {
-                        Console.WriteLine("\n Please enter valid expiration date!!!\n");
+                        Console.WriteLine("\nPlease enter valid expiration date!!!\n");
                     }
                 }
                 while (string.IsNullOrWhiteSpace(foodExp));
