@@ -6,9 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FoodStorage
-{
+{   
     internal class FoodItem
     {
+        //Declare some attributes 
+
         public string name;
         public string category;
         public int qty;
@@ -27,7 +29,7 @@ namespace FoodStorage
 
     }
 
-
+    //Make the foodclass list
     internal class FoodList
     {
         static List<FoodItem> storage = new List<FoodItem>();
@@ -36,12 +38,14 @@ namespace FoodStorage
 
         }
 
-        
+        //Make a method to add items to the list
         public static void AddToStorage(FoodItem food)
         {
             storage.Add(food);
         }
 
+
+        //One to remove foods
         public static void RemoveFromStorage()
         {
             Console.WriteLine("Which item would you like to remove");
@@ -58,6 +62,8 @@ namespace FoodStorage
             Console.WriteLine("Item Removed");
         }
 
+
+        //One to display all foods in the list
         public static void DisplayFood()
         {
             Console.WriteLine($"\n{"Name", -10} {"Category", -10} {"Qty", -7} {"Exp Date"}");

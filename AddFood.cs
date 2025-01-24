@@ -8,9 +8,10 @@ namespace FoodStorage
 {
     internal class AddFood
     {
-        public AddFood() 
+        public AddFood()
         { }
 
+        // Method to get data for each food item
         public static void AddingFood()
         {
             string answer;
@@ -29,7 +30,6 @@ namespace FoodStorage
                 }
                 while (string.IsNullOrWhiteSpace(foodName));
 
-
                 string foodCat;
                 do
                 {
@@ -41,7 +41,6 @@ namespace FoodStorage
                     }
                 }
                 while (string.IsNullOrWhiteSpace(foodCat));
-
 
                 int foodQty = 0;
                 string strFoodQty;
@@ -59,10 +58,13 @@ namespace FoodStorage
 
                         while (Valid)
                         {
-
                             try
                             {
                                 foodQty = int.Parse(strFoodQty);
+                                if (foodQty < 0)
+                                {
+                                    throw new Exception("Yea right buddy");
+                                }
                                 Valid = false;
                             }
                             catch
@@ -70,34 +72,46 @@ namespace FoodStorage
                                 Console.WriteLine("\nPlease enter valid food quantity!!!\n");
                                 strFoodQty = Console.ReadLine();
                             }
-
                         }
-                    }   
+                    }
                 }
                 while (string.IsNullOrWhiteSpace(strFoodQty));
 
-
                 string foodExp;
+                DateTime dfoodExp;
                 do
                 {
-                    Console.WriteLine("Enter in food expiration date");
+                    Console.WriteLine("Enter in food expiration date 'yyyy-MM-DD'");
                     foodExp = Console.ReadLine();
                     if (string.IsNullOrWhiteSpace(foodExp))
                     {
                         Console.WriteLine("\nPlease enter valid expiration date!!!\n");
                     }
+                    else
+                    {
+                        Boolean dateValid = true;
+
+                        while (dateValid)
+                        {
+                            try
+                            {
+                                dfoodExp = DateTime.Parse(foodExp);
+                                dateValid = false;
+                            }
+                            catch
+                            {
+                                Console.WriteLine("\nPlease enter a valid expiration date!!!\n");
+                                foodExp = Console.ReadLine();
+                            }
+                        }
+                    }
                 }
                 while (string.IsNullOrWhiteSpace(foodExp));
 
-
-
                 FoodItem fi = new FoodItem(foodName, foodCat, foodQty, foodExp);
 
-
                 Console.WriteLine("Would you like to enter in more food items?");
-
                 answer = Console.ReadLine();
-
             }
             while (answer[0].ToString().ToUpper() == "Y");
         }

@@ -8,8 +8,10 @@ internal class Program
     {
         string answer;
 
+        //Grab the menu class
         Menu menu = new Menu();
 
+        //Make never ending loop until broken by program exit
         while (true)
         {
             answer = Menu.DisplayMenu();

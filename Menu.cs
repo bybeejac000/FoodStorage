@@ -12,6 +12,7 @@ namespace FoodStorage
         public Menu()
         { }
 
+        //Make the main menu
         public static string DisplayMenu()
         {
 
